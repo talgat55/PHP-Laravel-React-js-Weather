@@ -24,6 +24,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
+        "axios": "^0.19",
         "react": "^16.9.0",
         "react-dom": "^16.9.0"
     }

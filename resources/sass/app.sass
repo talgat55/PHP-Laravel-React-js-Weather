@@ -1,13 +1,190 @@
-// Fonts
+$font_basic: 'Proxima Nova'
+$text_color: #fff
+$main_color: #498CEC
+$font_path: "/fonts/"
 
-// Variables
-@import 'variables'
+@font-face
+  font-family: 'Proxima Nova'
+  src: url('#{$font_path}ProximaNova-Regular.ttf') format('truetype'),
+  src: url('#{$font_path}ProximaNova-Regular.woff') format('woff')
+  font-weight: 400
+  font-style: normal
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap'
+@font-face
+  font-family: 'Proxima Nova'
+  src: url('#{$font_path}ProximaNova-Bold.ttf') format('truetype'),
+  src: url('#{$font_path}ProximaNova-Bold.woff') format('woff')
+  font-weight: 700
+  font-style: normal
 
-
-.hide-title
-  margin: 0
-  height: 0
+.app
+  width: 100%
+  font-family: $font_basic
+  font-weight: 400
+  font-size: 18px
+  line-height: 1.5
+  background-color: $main_color
+  height: 100vh
   overflow: hidden
+
+.wrapper
+  height: 100vh
+  padding: 6% 0 10% 0
+  .top
+    height: 15vh
+    #main-form
+      .switch-block
+        span
+          font-size: 12px
+          padding: 0 9px
+          color: $text_color
+      #button-10
+        position: relative
+        top: 0
+        width: 80px
+        height: 29px
+        margin: 0
+        overflow: hidden
+        border: 1px solid rgba(255,255,255,.4)
+        box-sizing: border-box
+        border-radius: 8px
+      #button-10 .knobs:before, #button-10 .knobs:after, #button-10 .knobs span
+        position: absolute
+        top: 0
+        width: 40px
+        height: 29px
+        font-size: 18px
+        font-weight: bold
+        text-align: center
+        line-height: 1
+        padding: 5px 4px
+        border-radius: 2px
+        transition: 0.3s ease all
+      #button-10 .knobs:before
+        content: ''
+        left: 0
+        background-color: rgba(255,255,255,.4)
+      #button-10 .knobs:after
+        content: 'F'
+        right: 0
+        color: $text_color
+        opacity: .4
+      #button-10 .knobs span
+        display: inline-block
+        left: 0
+        color: $text_color
+        z-index: 1
+      #button-10 .checkbox:checked + .knobs span
+        color: $text_color
+        opacity: .4
+      #button-10 .checkbox:checked + .knobs:before
+        left: 39px
+        background-color: rgba(255, 255, 255, 0.4)
+      #button-10 .checkbox:checked + .knobs:after
+        color: $text_color
+        opacity: 1
+      .button-cover, .knobs, .layer
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+      .button
+        position: relative
+        top: 50%
+        width: 74px
+        height: 36px
+        margin: -20px auto 0 auto
+        overflow: hidden
+      .checkbox
+        position: relative
+        width: 100%
+        height: 100%
+        padding: 0
+        margin: 0
+        opacity: 0
+        cursor: pointer
+        z-index: 3
+      .knobs
+        z-index: 2
+      .layer
+        width: 100%
+        transition: 0.3s ease all
+        z-index: 1
+      .search-bar
+        background: $text_color
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15)
+        border-radius: 8px
+        padding: 28px 32px  22px
+        font-size: 30px
+        color: #000
+        border: none
+        width: 50%
+        .search-button
+          background: transparent
+          font-weight: 400
+          border: none
+          font-family: $font_basic
+          color: $main_color
+          font-size: 30px
+          transition: all .3s
+          &:hover
+            color: #000
+          &:focus,
+          &:active
+            outline: none
+
+        input
+          border: none
+          width: 100%
+          &:active,
+          &:focus
+            outline: none
+
+
+  .center
+    height: 55vh
+    .center-wrap
+      width: max-content
+      margin: 0 auto
+      color: $text_color
+      padding: 50px 0
+      .description
+        font-size: 25px
+        padding: 0 50px
+        text-transform: lowercase
+        &::first-letter
+          text-transform: capitalize
+      .temp
+        font-size: 120px
+        padding-right: 60px
+        line-height: 1
+        min-width: 172px
+        span
+          font-size: 69px
+          position: absolute
+          top: 6px
+          line-height: 1
+          right: -56px
+
+
+
+
+  .bottom
+    height: 30vh
+    .item
+      color: $text_color
+      .heading
+        opacity: .6
+        font-size: 18px
+        margin-bottom: 7px
+      .content
+        font-size: 25px
+        font-weight: 700
+        span
+          font-weight: 400
+
+
+
+
+

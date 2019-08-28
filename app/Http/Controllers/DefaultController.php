@@ -2,24 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Services\ApiWeatherService;
 
 class DefaultController extends Controller
 {
-
-
     /**
-     * Display a listing of the resource.
-     *
+     * Home page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(ApiWeatherService $apiWeatherService)
+    public function index()
     {
-        $apiKey = config('app.API_WEATHER');
-
-        $data = $apiWeatherService->getDataByUrl('524901',$apiKey,'ru','metric');
-
-        return view('index', compact('data'));
+        return view('index');
     }
 
 }
