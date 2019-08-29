@@ -12,5 +12,3 @@
 */
 
 Route::get('/', 'DefaultController@index');
-
-Route::get('/check', 'ApiController@check');

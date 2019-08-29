@@ -20,10 +20,5 @@ class ApiController extends Controller
         return response()->json($apiWeatherService->getRedyData($city,'ru',$unity));
     }
 
-    public function check(ApiWeatherService $apiWeatherService,Request $request)
-    {
-        $city = $request->get('q');
-        $unity = $request->get('units');
-        return response()->json($apiWeatherService->getRedyData('Киев','ru','metric'));
-    }
+
 }
