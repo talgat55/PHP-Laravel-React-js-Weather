@@ -3,30 +3,11 @@ import '../../public/css/app.css';
 import axios from 'axios';
 import ListInfo from './components/Listinfo';
 import {API_URL} from './config.json';
-
+import InitialState from './initialState';
 axios.defaults.headers.common['X-CSRF-TOKEN'] = window.token;
 const App = () => {
 
-    const [weather, setWeather] = useState({
-        main: {
-            temp: '0',
-            pressure: '0',
-            humidity: '0',
-        },
-        wind: {
-            speed: '0',
-            deg: '',
-
-        },
-        weather: [{
-            description: '-',
-            icon: ''
-        }],
-        clouds: {
-            all: '0'
-        }
-
-    });
+    const [weather, setWeather] = useState(InitialState);
     const [search, setSearch] = useState("Омск");
     const [query, setQuery] = useState('Омск');
     const [units, setUnits] = useState('metric');

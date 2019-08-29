@@ -1,1 +1,246 @@
-@font-face{font-family:Proxima Nova;src:url(/fonts/ProximaNova-Regular.ttf) format("truetype");src:url(/fonts/ProximaNova-Regular.woff) format("woff");font-weight:400;font-style:normal}@font-face{font-family:Proxima Nova;src:url(/fonts/ProximaNova-Bold.ttf) format("truetype");src:url(/fonts/ProximaNova-Bold.woff) format("woff");font-weight:700;font-style:normal}.app{width:100%;font-family:Proxima Nova;font-weight:400;font-size:18px;line-height:1.5;background-color:#498cec;height:100vh;overflow:hidden}.wrapper{height:100vh;padding:6% 0 10%}.wrapper .top{height:15vh}.wrapper .top #main-form .switch-block span{font-size:12px;padding:0 9px;color:#fff}.wrapper .top #main-form #button-10{position:relative;top:0;width:80px;height:29px;margin:0;overflow:hidden;border:1px solid hsla(0,0%,100%,.4);box-sizing:border-box;border-radius:8px}.wrapper .top #main-form #button-10 .knobs:after,.wrapper .top #main-form #button-10 .knobs:before,.wrapper .top #main-form #button-10 .knobs span{position:absolute;top:0;width:40px;height:29px;font-size:18px;font-weight:700;text-align:center;line-height:1;padding:5px 4px;border-radius:2px;transition:all .3s ease}.wrapper .top #main-form #button-10 .knobs:before{content:"";left:0;background-color:hsla(0,0%,100%,.4)}.wrapper .top #main-form #button-10 .knobs:after{content:"F";right:0;color:#fff;opacity:.4}.wrapper .top #main-form #button-10 .knobs span{display:inline-block;left:0;color:#fff;z-index:1}.wrapper .top #main-form #button-10 .checkbox:checked+.knobs span{color:#fff;opacity:.4}.wrapper .top #main-form #button-10 .checkbox:checked+.knobs:before{left:39px;background-color:hsla(0,0%,100%,.4)}.wrapper .top #main-form #button-10 .checkbox:checked+.knobs:after{color:#fff;opacity:1}.wrapper .top #main-form .button-cover,.wrapper .top #main-form .knobs,.wrapper .top #main-form .layer{position:absolute;top:0;right:0;bottom:0;left:0}.wrapper .top #main-form .button{position:relative;top:50%;width:74px;height:36px;margin:-20px auto 0;overflow:hidden}.wrapper .top #main-form .checkbox{position:relative;width:100%;height:100%;padding:0;margin:0;opacity:0;cursor:pointer;z-index:3}.wrapper .top #main-form .knobs{z-index:2}.wrapper .top #main-form .layer{width:100%;transition:all .3s ease;z-index:1}.wrapper .top #main-form .search-bar{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.15);border-radius:8px;padding:28px 32px 22px;font-size:30px;color:#000;border:none;width:50%}.wrapper .top #main-form .search-bar .search-button{background:transparent;font-weight:400;border:none;font-family:Proxima Nova;color:#498cec;font-size:30px;transition:all .3s}.wrapper .top #main-form .search-bar .search-button:hover{color:#000}.wrapper .top #main-form .search-bar .search-button:active,.wrapper .top #main-form .search-bar .search-button:focus{outline:none}.wrapper .top #main-form .search-bar input{border:none;width:100%}.wrapper .top #main-form .search-bar input:active,.wrapper .top #main-form .search-bar input:focus{outline:none}.wrapper .center{height:55vh}.wrapper .center .center-wrap{width:-webkit-max-content;width:-moz-max-content;width:max-content;margin:0 auto;color:#fff;padding:50px 0}.wrapper .center .center-wrap .description{font-size:25px;padding:0 50px;text-transform:lowercase}.wrapper .center .center-wrap .description:first-letter{text-transform:capitalize}.wrapper .center .center-wrap .temp{font-size:120px;padding-right:60px;line-height:1;min-width:172px}.wrapper .center .center-wrap .temp span{font-size:69px;position:absolute;top:6px;line-height:1;right:-56px}.wrapper .bottom{height:30vh}.wrapper .bottom .item{color:#fff}.wrapper .bottom .item .heading{opacity:.6;font-size:18px;margin-bottom:7px}.wrapper .bottom .item .content{font-size:25px;font-weight:700}.wrapper .bottom .item .content span{font-weight:400}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Regular.ttf") format("truetype");
+  src: url("/fonts/ProximaNova-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Bold.ttf") format("truetype");
+  src: url("/fonts/ProximaNova-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.app {
+  width: 100%;
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  background-color: #498CEC;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 100vh;
+  padding: 6% 0 10% 0;
+}
+
+.wrapper .top {
+  height: 15vh;
+}
+
+.wrapper .top #main-form .switch-block span {
+  font-size: 12px;
+  padding: 0 9px;
+  color: #fff;
+}
+
+.wrapper .top #main-form #button-10 {
+  position: relative;
+  top: 0;
+  width: 80px;
+  height: 29px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.wrapper .top #main-form #button-10 .knobs:before,
+.wrapper .top #main-form #button-10 .knobs:after,
+.wrapper .top #main-form #button-10 .knobs span {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 29px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 5px 4px;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+}
+
+.wrapper .top #main-form #button-10 .knobs:before {
+  content: "";
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.wrapper .top #main-form #button-10 .knobs:after {
+  content: "F";
+  right: 0;
+  color: #fff;
+  opacity: 0.4;
+}
+
+.wrapper .top #main-form #button-10 .knobs span {
+  display: inline-block;
+  left: 0;
+  color: #fff;
+  z-index: 1;
+}
+
+.wrapper .top #main-form #button-10 .checkbox:checked + .knobs span {
+  color: #fff;
+  opacity: 0.4;
+}
+
+.wrapper .top #main-form #button-10 .checkbox:checked + .knobs:before {
+  left: 39px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.wrapper .top #main-form #button-10 .checkbox:checked + .knobs:after {
+  color: #fff;
+  opacity: 1;
+}
+
+.wrapper .top #main-form .button-cover,
+.wrapper .top #main-form .knobs,
+.wrapper .top #main-form .layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.wrapper .top #main-form .button {
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.wrapper .top #main-form .checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.wrapper .top #main-form .knobs {
+  z-index: 2;
+}
+
+.wrapper .top #main-form .layer {
+  width: 100%;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.wrapper .top #main-form .search-bar {
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 28px 32px 22px;
+  font-size: 30px;
+  color: #000;
+  border: none;
+  width: 50%;
+}
+
+.wrapper .top #main-form .search-bar .search-button {
+  background: transparent;
+  font-weight: 400;
+  border: none;
+  font-family: "Proxima Nova";
+  color: #498CEC;
+  font-size: 30px;
+  transition: all 0.3s;
+}
+
+.wrapper .top #main-form .search-bar .search-button:hover {
+  color: #000;
+}
+
+.wrapper .top #main-form .search-bar .search-button:focus,
+.wrapper .top #main-form .search-bar .search-button:active {
+  outline: none;
+}
+
+.wrapper .top #main-form .search-bar input {
+  border: none;
+  width: 100%;
+}
+
+.wrapper .top #main-form .search-bar input:active,
+.wrapper .top #main-form .search-bar input:focus {
+  outline: none;
+}
+
+.wrapper .center {
+  height: 55vh;
+}
+
+.wrapper .center .center-wrap {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.wrapper .center .center-wrap .description {
+  font-size: 25px;
+  padding: 0 50px;
+  text-transform: lowercase;
+}
+
+.wrapper .center .center-wrap .description::first-letter {
+  text-transform: capitalize;
+}
+
+.wrapper .center .center-wrap .temp {
+  font-size: 120px;
+  padding-right: 60px;
+  line-height: 1;
+  min-width: 172px;
+}
+
+.wrapper .center .center-wrap .temp span {
+  font-size: 69px;
+  position: absolute;
+  top: 6px;
+  line-height: 1;
+  right: -56px;
+}
+
+.wrapper .bottom {
+  height: 30vh;
+}
+
+.wrapper .bottom .item {
+  color: #fff;
+}
+
+.wrapper .bottom .item .heading {
+  opacity: 0.6;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.wrapper .bottom .item .content {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.wrapper .bottom .item .content span {
+  font-weight: 400;
+}
+
