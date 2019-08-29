@@ -69,7 +69,7 @@ class ApiWeatherService
         }else if($number > '326.25' &&  $number <= '348.75' ){
             $output = 'Северо-северо-западный';
         }else{
-            $output = '';
+            $output = 'Штиль';
         }
 
         return $output;
@@ -86,7 +86,18 @@ class ApiWeatherService
 
         $apiKey = config('app.API_WEATHER');
         $data = $this->getDataByUrl($cityName, $apiKey, $lang, $units);
-        $data->wind->deg = $this->getDirectionWinter($data->wind->deg);
+        if($data->cod =='200'){
+            if(isset($data->wind->deg)){
+                $inputValue = $data->wind->deg;
+            }else{
+                $inputValue = '';
+            }
+
+            $data->wind->deg = $this->getDirectionWinter($inputValue);
+        }else{
+            $data = '';
+        }
+
         return $data;
     }
 

@@ -11,6 +11,7 @@ const App = () => {
     const [search, setSearch] = useState("Омск");
     const [query, setQuery] = useState('Омск');
     const [units, setUnits] = useState('metric');
+    const [error, setError] = useState('');
 
     // metric
     //imperial
@@ -27,7 +28,14 @@ const App = () => {
      */
     const getWeather = async () => {
         const response = await axios.get(urlReq);
-        setWeather(response.data);
+
+        if(response.data.length == 0){
+            setError('1');
+        }else{
+            setError('');
+            setWeather(response.data);
+        }
+
     };
 
     /**
@@ -87,7 +95,6 @@ const App = () => {
             contentTwo: '',
         }
     ];
-
     return (
         <div className="app">
             <div className="container">
@@ -95,6 +102,10 @@ const App = () => {
                     <div className="col-md-12 col-sm-12">
                         <div className="wrapper">
                             <div className="top">
+                                {
+                                    error && <div className="alert alert-danger" role="alert"> По вашему запросу ничего не найдено </div>
+                                }
+
                                 <form id="main-form" onSubmit={getSearch}>
                                     <div className="field d-flex align-items-start  justify-content-between">
                                         <div className="search-bar d-flex  justify-content-between">
