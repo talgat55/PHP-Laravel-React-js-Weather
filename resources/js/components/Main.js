@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import '../../public/css/app.css';
+import '../../../public/css/app.css';
 import axios from 'axios';
-import ListInfo from './components/Listinfo';
-import {API_URL} from './config.json';
-import InitialState from './initialState';
+import ListInfo from './Listinfo';
+import {API_URL} from '../config.json';
 axios.defaults.headers.common['X-CSRF-TOKEN'] = window.token;
-const App = () => {
+const Main = () => {
 
-    const [weather, setWeather] = useState(InitialState);
+    const [weather, setWeather] = useState(null);
     const [search, setSearch] = useState("Омск");
     const [query, setQuery] = useState('Омск');
     const [units, setUnits] = useState('metric');
@@ -73,25 +72,25 @@ const App = () => {
         {
             id: '1',
             title: 'Ветер',
-            contentOne: `${weather.wind.speed}`,
-            contentTwo: `м/с, ${weather.wind.deg}`,
+            contentOne: `${ weather ? weather.wind.speed : '-'}`,
+            contentTwo: `м/с, ${ weather ? weather.wind.deg : '-'}`,
         },
         {
             id: '2',
             title: 'Давление',
-            contentOne: `${parseInt(weather.main.pressure * 0.7500620)}`,
+            contentOne: `${ weather ? parseInt(weather.main.pressure * 0.7500620) : '-'}`,
             contentTwo: `мм рт. ст.`,
         },
         {
             id: '3',
             title: 'Влажность',
-            contentOne: `${weather.main.humidity} %`,
+            contentOne: `${ weather ? weather.main.humidity : '-'} %`,
             contentTwo: '',
         },
         {
             id: '4',
             title: 'Вероятность дождя',
-            contentOne: `${weather.clouds.all} %`,
+            contentOne: `${ weather ? weather.clouds.all : '-'} %`,
             contentTwo: '',
         }
     ];
@@ -141,13 +140,13 @@ const App = () => {
                                         </div>
                                         <div className="temp  d-flex align-items-center">
                                             <div className="position-relative">
-                                                {parseInt(weather.main.temp)}
+                                                {weather ? parseInt(weather.main.temp) : '-'}
                                                 <span>{(units === 'metric') ? 'O' : 'F'}</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="w-100 description">
-                                        {weather.weather[0].description}
+                                        {weather ? weather.weather[0].description: '-'}
                                     </div>
                                 </div>
 
@@ -168,4 +167,4 @@ const App = () => {
         </div>
     );
 };
-export default App;
+export default Main;

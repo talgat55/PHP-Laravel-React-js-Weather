@@ -12,11 +12,12 @@
     <!-- Favicon -->
     <link href="{{ asset('favicon.ico') }}" rel="icon" type="image/png">
     <link href="{{ mix('/css/server.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
 </head>
 <body class="{{ $class ?? '' }}">
 <h1 class="hide-title">{{ config('app.name') }}</h1>
 <div id="root"></div>
-<script src="{{ mix('/js/index.js') }}"></script>
+<script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>
